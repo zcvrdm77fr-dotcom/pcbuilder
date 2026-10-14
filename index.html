@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rakenna tietokone budjetilla</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>Paljonko saat käyttää tietokoneeseen?</h1>
+<div class="bud"><input id="num" class="big" type="number" inputmode="numeric" min="200" max="10000" step="50" value="1200" aria-label="Budjetti euroina"><span class="eur">€</span></div>
+<input id="rng" type="range" min="300" max="5000" step="50" value="1200" aria-label="Budjetti liukusäätimellä">
+
+<fieldset><legend>Mihin konetta käytetään?</legend>
+<div class="chips" data-key="use"><button type="button" data-v="game" aria-pressed="true">Pelaamiseen</button><button type="button" data-v="work" aria-pressed="false">Työhön ja nettiin</button><button type="button" data-v="create" aria-pressed="false">Videoihin ja 3D:hen</button></div></fieldset>
+
+<div id="gameq">
+<fieldset><legend>Mitä pelejä pelaat?</legend>
+<div class="chips" data-key="type"><button type="button" data-v="comp" aria-pressed="false">Kilpailullisia (CS2, Valorant)</button><button type="button" data-v="aaa" aria-pressed="false">Isoja AAA-pelejä</button><button type="button" data-v="both" aria-pressed="true">Molempia</button></div></fieldset>
+<fieldset><legend>Minkä resoluution näytöllä pelaat?</legend>
+<div class="chips" data-key="res"><button type="button" data-v="1080" aria-pressed="false">1080p</button><button type="button" data-v="1440" aria-pressed="true">1440p</button><button type="button" data-v="4k" aria-pressed="false">4K</button></div></fieldset>
+</div>
+
+<fieldset><legend>Mitä tarvitset koneen lisäksi?</legend>
+<div class="chips" data-key="per" data-multi="1"><button type="button" data-v="monitor" aria-pressed="true">Näyttö</button><button type="button" data-v="kbm" aria-pressed="false">Näppäimistö ja hiiri</button><button type="button" data-v="head" aria-pressed="false">Kuulokkeet</button></div></fieldset>
+
+<fieldset><legend>Haluatko tietyn valmistajan osia?</legend>
+<div class="chips" data-key="gb"><button type="button" data-v="any" aria-pressed="true">Näytönohjain: ei väliä</button><button type="button" data-v="nv" aria-pressed="false">Nvidia</button><button type="button" data-v="amd" aria-pressed="false">AMD</button></div>
+<div class="chips" data-key="cb" style="margin-top:8px"><button type="button" data-v="any" aria-pressed="true">Prosessori: ei väliä</button><button type="button" data-v="amd" aria-pressed="false">AMD</button><button type="button" data-v="intel" aria-pressed="false">Intel</button></div></fieldset>
+
+<fieldset><legend>Millainen koneen pitää olla?</legend>
+<div class="chips" data-key="style"><button type="button" data-v="any" aria-pressed="true">Ei väliä</button><button type="button" data-v="quiet" aria-pressed="false">Hiljainen</button><button type="button" data-v="small" aria-pressed="false">Pieni</button><button type="button" data-v="rgb" aria-pressed="false">Näyttävä, valoilla</button></div></fieldset>
+
+<button id="go" type="button">Tee kokoonpano</button>
+<section id="out" aria-live="polite"></section>
+</main>
+<script src="script.js"></script></body></html>
